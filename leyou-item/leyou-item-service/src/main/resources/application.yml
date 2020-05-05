@@ -1,0 +1,21 @@
+server:
+  port: 10088 #运行端口号
+spring:
+  application:
+    name: leyou-item-service #服务名称
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: admin
+    url:  jdbc:mysql://localhost:3306/leyou_mall?serverTimezone=GMT&useSSL=true
+eureka:
+  client:
+    register-with-eureka: true #注册到Eureka的注册中心
+    fetch-registry: true #获取注册实例列表
+    service-url:
+      defaultZone: http://localhost:10086/eureka/ #配置注册中心地址
+
+mybatis:
+  type-aliases-package: com.leyou.item.pojo
+  # 驼峰命名规范 如：数据库字段是  order_id 那么 实体字段就要写成 orderId
+  configuration.map-underscore-to-camel-case: true
